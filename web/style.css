@@ -74,7 +74,7 @@ footer {
 }
 
 footer {
-  margin-top: 8em;
+  margin-top: 6em;
 }
 
 h1 ~ aside {
@@ -129,7 +129,7 @@ a:not(:hover) {
 pre,
 code,
 textarea {
-  font-family: "Menlo", monospace;
+  font-family: "Menlo", "Menlo Regular", monospace;
 }
 
 code {
@@ -172,20 +172,6 @@ pre {
 .javascript .class,
 .javascript .special {
   color: #e6550d;
-}
-
-.album_cover {
-  width: 179px;
-  height: 179px;
-  border: 0px;
-  margin: 0px;
-}
-
-.single_cover {
-  width: 143px;
-  height: 143px;
-  border: 0px;
-  margin: 0px;
 }
 
 svg {
@@ -237,10 +223,19 @@ ul {
   margin-top: 0;
 }
 
-@media only screen and (max-device-width: 1024px) {
+@media only screen and (max-device-width: 1023px) {
   .ocks-org body {
-    font-size: 80%;
+    font-size: 72%;
     padding: 0.5rem;
+  }
+
+  body > p,
+  div > p {
+    width: 90vw !important;
+  }
+
+  li {
+    width: 82vw;
   }
 
   h3,
@@ -248,6 +243,7 @@ ul {
   p,
   ul {
     padding-left: .7rem;
+    width: 90vw;
   }
 
   h1 {
