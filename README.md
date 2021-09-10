@@ -1,6 +1,6 @@
 Comprehensive Python Cheatsheet
 ===============================
-<sup>[Download text file](https://raw.githubusercontent.com/gto76/python-cheatsheet/master/README.md), [Buy PDF](https://transactions.sendowl.com/products/78175486/4422834F/view), [Fork me on GitHub](https://github.com/gto76/python-cheatsheet) or [Check out FAQ](https://github.com/gto76/python-cheatsheet/wiki/Frequently-Asked-Questions).
+<sup>[Download text file](https://raw.githubusercontent.com/gto76/python-cheatsheet/main/README.md), [Buy PDF](https://transactions.sendowl.com/products/78175486/4422834F/view), [Fork me on GitHub](https://github.com/gto76/python-cheatsheet) or [Check out FAQ](https://github.com/gto76/python-cheatsheet/wiki/Frequently-Asked-Questions).
 </sup>
 
 ![Monty Python](web/image_888.jpeg)
@@ -11,9 +11,9 @@ Contents
 **&nbsp;&nbsp;&nbsp;** **1. Collections:** **&nbsp;** **[`List`](#list)**__,__ **[`Dictionary`](#dictionary)**__,__ **[`Set`](#set)**__,__ **[`Tuple`](#tuple)**__,__ **[`Range`](#range)**__,__ **[`Enumerate`](#enumerate)**__,__ **[`Iterator`](#iterator)**__,__ **[`Generator`](#generator)**__.__  
 **&nbsp;&nbsp;&nbsp;** **2. Types:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Type`](#type)**__,__ **[`String`](#string)**__,__ **[`Regular_Exp`](#regex)**__,__ **[`Format`](#format)**__,__ **[`Numbers`](#numbers-1)**__,__ **[`Combinatorics`](#combinatorics)**__,__ **[`Datetime`](#datetime)**__.__  
 **&nbsp;&nbsp;&nbsp;** **3. Syntax:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Args`](#arguments)**__,__ **[`Inline`](#inline)**__,__ **[`Closure`](#closure)**__,__ **[`Decorator`](#decorator)**__,__ **[`Class`](#class)**__,__ **[`Duck_Type`](#duck-types)**__,__ **[`Enum`](#enum)**__,__ **[`Exception`](#exceptions)**__.__  
-**&nbsp;&nbsp;&nbsp;** **4. System:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Exit`](#exit)**__,__ **[`Print`](#print)**__,__ **[`Input`](#input)**__,__ **[`Command_Line_Arguments`](#command-line-arguments)**__,__ **[`Open`](#open)**__,__ **[`Path`](#path)**__,__ **[`OS_Commands`](#os-commands)**__.__  
+**&nbsp;&nbsp;&nbsp;** **4. System:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Exit`](#exit)**__,__ **[`Print`](#print)**__,__ **[`Input`](#input)**__,__ **[`Command_Line_Arguments`](#command-line-arguments)**__,__ **[`Open`](#open)**__,__ **[`Path`](#paths)**__,__ **[`OS_Commands`](#os-commands)**__.__  
 **&nbsp;&nbsp;&nbsp;** **5. Data:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`JSON`](#json)**__,__ **[`Pickle`](#pickle)**__,__ **[`CSV`](#csv)**__,__ **[`SQLite`](#sqlite)**__,__ **[`Bytes`](#bytes)**__,__ **[`Struct`](#struct)**__,__ **[`Array`](#array)**__,__ **[`Memory_View`](#memory-view)**__,__ **[`Deque`](#deque)**__.__  
-**&nbsp;&nbsp;&nbsp;** **6. Advanced:** **&nbsp;&nbsp;&nbsp;**  **[`Threading`](#threading)**__,__ **[`Operator`](#operator)**__,__ **[`Introspection`](#introspection)**__,__ **[`Metaprograming`](#metaprograming)**__,__ **[`Eval`](#eval)**__,__ **[`Coroutines`](#coroutines)**__.__  
+**&nbsp;&nbsp;&nbsp;** **6. Advanced:** **&nbsp;&nbsp;&nbsp;**  **[`Threading`](#threading)**__,__ **[`Operator`](#operator)**__,__ **[`Introspection`](#introspection)**__,__ **[`Metaprograming`](#metaprogramming)**__,__ **[`Eval`](#eval)**__,__ **[`Coroutines`](#coroutines)**__.__  
 **&nbsp;&nbsp;&nbsp;** **7. Libraries:** **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**  **[`Progress_Bar`](#progress-bar)**__,__ **[`Plot`](#plot)**__,__ **[`Table`](#table)**__,__ **[`Curses`](#curses)**__,__ **[`Logging`](#logging)**__,__ **[`Scraping`](#scraping)**__,__ **[`Web`](#web)**__,__ **[`Profile`](#profiling)**__,__  
 **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** **[`NumPy`](#numpy)**__,__ **[`Image`](#image)**__,__ **[`Audio`](#audio)**__,__ **[`Games`](#pygame)**__,__ **[`Data`](#pandas)**__.__
 
@@ -56,11 +56,11 @@ list_of_chars    = list(<str>)
 * **Module [operator](#operator) provides functions itemgetter() and mul() that offer the same functionality as [lambda](#lambda) expressions above.**
 
 ```python
+<list>.insert(<int>, <el>)     # Inserts item at index and moves the rest to the right.
+<el>  = <list>.pop([<int>])    # Returns and removes item at index or from the end.
 <int> = <list>.count(<el>)     # Returns number of occurrences. Also works on strings.
-index = <list>.index(<el>)     # Returns index of first occurrence or raises ValueError.
-<list>.insert(index, <el>)     # Inserts item at index and moves the rest to the right.
-<el> = <list>.pop([index])     # Removes and returns item at index or from the end.
-<list>.remove(<el>)            # Removes first occurrence of item or raises ValueError.
+<int> = <list>.index(<el>)     # Returns index of the first occurrence or raises ValueError.
+<list>.remove(<el>)            # Removes first occurrence of the item or raises ValueError.
 <list>.clear()                 # Removes all items. Also works on dictionary and set.
 ```
 
@@ -144,8 +144,8 @@ Tuple
 **Tuple is an immutable and hashable list.**
 ```python
 <tuple> = ()
-<tuple> = (<el>,)
-<tuple> = (<el_1>, <el_2> [, ...])
+<tuple> = (<el>,)                           # Or: <el>,
+<tuple> = (<el_1>, <el_2> [, ...])          # Or: <el_1>, <el_2> [, ...]
 ```
 
 ### Named Tuple
@@ -308,15 +308,15 @@ String
 ```python
 <list> = <str>.split()                       # Splits on one or more whitespace characters.
 <list> = <str>.split(sep=None, maxsplit=-1)  # Splits on 'sep' str at most 'maxsplit' times.
-<list> = <str>.splitlines(keepends=False)    # Splits on \n,\r,\r\n. Keeps them if 'keepends'.
-<str>  = <str>.join(<coll_of_strings>)       # Joins elements using string as separator.
+<list> = <str>.splitlines(keepends=False)    # Splits on [\n\r\f\v\x1c\x1d\x1e\x85] and '\r\n'.
+<str>  = <str>.join(<coll_of_strings>)       # Joins elements using string as a separator.
 ```
 
 ```python
 <bool> = <sub_str> in <str>                  # Checks if string contains a substring.
 <bool> = <str>.startswith(<sub_str>)         # Pass tuple of strings for multiple options.
 <bool> = <str>.endswith(<sub_str>)           # Pass tuple of strings for multiple options.
-<int>  = <str>.find(<sub_str>)               # Returns start index of first match or -1.
+<int>  = <str>.find(<sub_str>)               # Returns start index of the first match or -1.
 <int>  = <str>.index(<sub_str>)              # Same but raises ValueError if missing.
 ```
 
@@ -376,12 +376,13 @@ import re
 ```
 
 ### Special Sequences
-* **By default digits, alphanumerics and whitespaces from all alphabets are matched, unless `'flags=re.ASCII'` argument is used.**
+* **By default, decimal characters, alphanumerics and whitespaces from all alphabets are matched unless `'flags=re.ASCII'` argument is used.**
+* **As shown below, it restricts special sequence matches to the first 128 characters and prevents `'\s'` from accepting `'[\x1c-\x1f]'`.**
 * **Use a capital letter for negation.**
 ```python
-'\d' == '[0-9]'                                # Matches any digit.
-'\w' == '[a-zA-Z0-9_]'                         # Matches any alphanumeric.
-'\s' == '[ \t\n\r\f\v]'                        # Matches any whitespace.
+'\d' == '[0-9]'                                # Matches decimal characters.
+'\w' == '[a-zA-Z0-9_]'                         # Matches alphanumerics and underscore.
+'\s' == '[ \t\n\r\f\v]'                        # Matches whitespaces.
 ```
 
 
@@ -411,9 +412,10 @@ Format
 {<el>:.<10}                                    # '<el>......'
 {<el>:0}                                       # '<el>'
 ```
+* **Use `'{<el>:{<str/int/float>}[...]}'` to set options dynamically.**
+* **Adding `'!r'` before the colon converts object to string by calling its [repr()](#class) method.**
 
 ### Strings
-**`'!r'` calls object's [repr()](#class) method, instead of [str()](#class), to get a string.**
 ```python
 {'abcde'!r:10}                                 # "'abcde'   "
 {'abcde':10.3}                                 # 'abc       '
@@ -440,33 +442,32 @@ Format
 
 #### Comparison of presentation types:
 ```text
-+---------------+-----------------+-----------------+-----------------+-----------------+
-|               |    {<float>}    |   {<float>:f}   |   {<float>:e}   |   {<float>:%}   |
-+---------------+-----------------+-----------------+-----------------+-----------------+
-|   0.000056789 |    '5.6789e-05' |     '0.000057'  |  '5.678900e-05' |     '0.005679%' |
-|   0.00056789  |    '0.00056789' |     '0.000568'  |  '5.678900e-04' |     '0.056789%' |
-|   0.0056789   |    '0.0056789'  |     '0.005679'  |  '5.678900e-03' |     '0.567890%' |
-|   0.056789    |    '0.056789'   |     '0.056789'  |  '5.678900e-02' |     '5.678900%' |
-|   0.56789     |    '0.56789'    |     '0.567890'  |  '5.678900e-01' |    '56.789000%' |
-|   5.6789      |    '5.6789'     |     '5.678900'  |  '5.678900e+00' |   '567.890000%' |
-|  56.789       |   '56.789'      |    '56.789000'  |  '5.678900e+01' |  '5678.900000%' |
-| 567.89        |  '567.89'       |   '567.890000'  |  '5.678900e+02' | '56789.000000%' |
-+---------------+-----------------+-----------------+-----------------+-----------------+
++--------------+----------------+----------------+----------------+----------------+
+|              |    {<float>}   |   {<float>:f}  |   {<float>:e}  |   {<float>:%}  |
++--------------+----------------+----------------+----------------+----------------+
+|  0.000056789 |   '5.6789e-05' |    '0.000057'  | '5.678900e-05' |    '0.005679%' |
+|  0.00056789  |   '0.00056789' |    '0.000568'  | '5.678900e-04' |    '0.056789%' |
+|  0.0056789   |   '0.0056789'  |    '0.005679'  | '5.678900e-03' |    '0.567890%' |
+|  0.056789    |   '0.056789'   |    '0.056789'  | '5.678900e-02' |    '5.678900%' |
+|  0.56789     |   '0.56789'    |    '0.567890'  | '5.678900e-01' |   '56.789000%' |
+|  5.6789      |   '5.6789'     |    '5.678900'  | '5.678900e+00' |  '567.890000%' |
+| 56.789       |  '56.789'      |   '56.789000'  | '5.678900e+01' | '5678.900000%' |
++--------------+----------------+----------------+----------------+----------------+
 ```
 ```text
-+---------------+-----------------+-----------------+-----------------+-----------------+
-|               |   {<float>:.2}  |  {<float>:.2f}  |  {<float>:.2e}  |  {<float>:.2%}  |
-+---------------+-----------------+-----------------+-----------------+-----------------+
-|   0.000056789 |    '5.7e-05'    |       '0.00'    |    '5.68e-05'   |       '0.01%'   |
-|   0.00056789  |    '0.00057'    |       '0.00'    |    '5.68e-04'   |       '0.06%'   |
-|   0.0056789   |    '0.0057'     |       '0.01'    |    '5.68e-03'   |       '0.57%'   |
-|   0.056789    |    '0.057'      |       '0.06'    |    '5.68e-02'   |       '5.68%'   |
-|   0.56789     |    '0.57'       |       '0.57'    |    '5.68e-01'   |      '56.79%'   |
-|   5.6789      |    '5.7'        |       '5.68'    |    '5.68e+00'   |     '567.89%'   |
-|  56.789       |    '5.7e+01'    |      '56.79'    |    '5.68e+01'   |    '5678.90%'   |
-| 567.89        |    '5.7e+02'    |     '567.89'    |    '5.68e+02'   |   '56789.00%'   |
-+---------------+-----------------+-----------------+-----------------+-----------------+
++--------------+----------------+----------------+----------------+----------------+
+|              |  {<float>:.2}  |  {<float>:.2f} |  {<float>:.2e} |  {<float>:.2%} |
++--------------+----------------+----------------+----------------+----------------+
+|  0.000056789 |    '5.7e-05'   |      '0.00'    |   '5.68e-05'   |      '0.01%'   |
+|  0.00056789  |    '0.00057'   |      '0.00'    |   '5.68e-04'   |      '0.06%'   |
+|  0.0056789   |    '0.0057'    |      '0.01'    |   '5.68e-03'   |      '0.57%'   |
+|  0.056789    |    '0.057'     |      '0.06'    |   '5.68e-02'   |      '5.68%'   |
+|  0.56789     |    '0.57'      |      '0.57'    |   '5.68e-01'   |     '56.79%'   |
+|  5.6789      |    '5.7'       |      '5.68'    |   '5.68e+00'   |    '567.89%'   |
+| 56.789       |    '5.7e+01'   |     '56.79'    |   '5.68e+01'   |   '5678.90%'   |
++--------------+----------------+----------------+----------------+----------------+
 ```
+* **When both rounding up and rounding down are possible, the one that returns result with even last digit is chosen. That makes `'{6.5:.0f}'` a `'6'` and `'{7.5:.0f}'` an `'8'`.**
 
 ### Ints
 ```python
@@ -500,7 +501,7 @@ Numbers
 ### Math
 ```python
 from math import e, pi, inf, nan, isinf, isnan
-from math import cos, acos, sin, asin, tan, atan, degrees, radians
+from math import sin, cos, tan, asin, acos, atan, degrees, radians
 from math import log, log10, log2
 ```
 
@@ -511,11 +512,11 @@ from statistics import mean, median, variance, stdev, pvariance, pstdev
 
 ### Random
 ```python
-from random import random, randint, choice, shuffle
-<float> = random()
-<int>   = randint(from_inclusive, to_inclusive)
-<el>    = choice(<list>)
-shuffle(<list>)
+from random import random, randint, choice, shuffle, gauss, seed
+
+<float> = random()                       # A float inside [0, 1).
+<int>   = randint(from_inc, to_inc)      # An int inside [from_inc, to_inc].
+<el>    = choice(<list>)                 # Keeps the list intact.
 ```
 
 ### Bin, Hex
@@ -531,7 +532,7 @@ shuffle(<list>)
 <int> = <int> & <int>                    # And
 <int> = <int> | <int>                    # Or
 <int> = <int> ^ <int>                    # Xor (0 if both bits equal)
-<int> = <int> << n_bits                  # Shift left (>> for right)
+<int> = <int> << n_bits                  # Left shift (>> for right)
 <int> = ~<int>                           # Not (also: -<int> - 1)
 ```
 
@@ -586,7 +587,7 @@ Datetime
 
 ```python
 from datetime import date, time, datetime, timedelta
-from dateutil.tz import UTC, tzlocal, gettz, resolve_imaginary
+from dateutil.tz import UTC, tzlocal, gettz, datetime_exists, resolve_imaginary
 ```
 
 ### Constructors
@@ -614,15 +615,15 @@ from dateutil.tz import UTC, tzlocal, gettz, resolve_imaginary
 <tzinfo> = UTC                              # UTC timezone. London without DST.
 <tzinfo> = tzlocal()                        # Local timezone. Also gettz().
 <tzinfo> = gettz('<Continent>/<City>')      # 'Continent/City_Name' timezone or None.
-<DTa>    = <DT>.astimezone(<tzinfo>)        # Datetime, converted to passed timezone.
-<Ta/DTa> = <T/DT>.replace(tzinfo=<tzinfo>)  # Unconverted object with new timezone.
+<DTa>    = <DT>.astimezone(<tzinfo>)        # Datetime, converted to the passed timezone.
+<Ta/DTa> = <T/DT>.replace(tzinfo=<tzinfo>)  # Unconverted object with a new timezone.
 ```
 
 ### Encode
 ```python
 <D/T/DT> = D/T/DT.fromisoformat('<iso>')    # Object from ISO string. Raises ValueError.
 <DT>     = DT.strptime(<str>, '<format>')   # Datetime from str, according to format.
-<D/DTn>  = D/DT.fromordinal(<int>)          # D/DTn from days since Christ, at midnight.
+<D/DTn>  = D/DT.fromordinal(<int>)          # D/DTn from days since the Gregorian NYE 1.
 <DTn>    = DT.fromtimestamp(<real>)         # Local time DTn from seconds since the Epoch.
 <DTa>    = DT.fromtimestamp(<real>, <tz.>)  # Aware datetime from seconds since the Epoch.
 ```
@@ -633,7 +634,7 @@ from dateutil.tz import UTC, tzlocal, gettz, resolve_imaginary
 ```python
 <str>    = <D/T/DT>.isoformat(sep='T')      # Also timespec='auto/hours/minutes/seconds'.
 <str>    = <D/T/DT>.strftime('<format>')    # Custom string representation.
-<int>    = <D/DT>.toordinal()               # Days since Christ, ignoring time and tz.
+<int>    = <D/DT>.toordinal()               # Days since Gregorian NYE 1, ignoring time and tz.
 <float>  = <DTn>.timestamp()                # Seconds since the Epoch, from DTn in local tz.
 <float>  = <DTa>.timestamp()                # Seconds since the Epoch, from DTa.
 ```
@@ -731,10 +732,10 @@ def f(x, *args, z, **kwargs):  # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3
 
 ### Other Uses
 ```python
-<list>  = [*<collection> [, ...]]
-<set>   = {*<collection> [, ...]}
-<tuple> = (*<collection>, [...])
-<dict>  = {**<dict> [, ...]}
+<list> = [*<collection> [, ...]]
+<set>  = {*<collection> [, ...]}
+<tup.> = (*<collection>, [...])
+<dict> = {**<dict> [, ...]}
 ```
 
 ```python
@@ -746,47 +747,40 @@ Inline
 ------
 ### Lambda
 ```python
-<function> = lambda: <return_value>
-<function> = lambda <argument_1>, <argument_2>: <return_value>
+<func> = lambda: <return_value>
+<func> = lambda <arg_1>, <arg_2>: <return_value>
 ```
 
 ### Comprehensions
 ```python
-<list> = [i+1 for i in range(10)]                   # [1, 2, ..., 10]
-<set>  = {i for i in range(10) if i > 5}            # {6, 7, 8, 9}
-<iter> = (i+5 for i in range(10))                   # (5, 6, ..., 14)
-<dict> = {i: i*2 for i in range(10)}                # {0: 0, 1: 2, ..., 9: 18}
+<list> = [i+1 for i in range(10)]                         # [1, 2, ..., 10]
+<set>  = {i for i in range(10) if i > 5}                  # {6, 7, 8, 9}
+<iter> = (i+5 for i in range(10))                         # (5, 6, ..., 14)
+<dict> = {i: i*2 for i in range(10)}                      # {0: 0, 1: 2, ..., 9: 18}
 ```
 
 ```python
-out = [i+j for i in range(10) for j in range(10)]
-```
-
-#### Is the same as:
-```python
-out = []
-for i in range(10):
-    for j in range(10):
-        out.append(i+j)
+>>> [l+r for l in 'abc' for r in 'abc']
+['aa', 'ab', 'ac', ..., 'cc']
 ```
 
 ### Map, Filter, Reduce
 ```python
-from functools import reduce
-<iter> = map(lambda x: x + 1, range(10))            # (1, 2, ..., 10)
-<iter> = filter(lambda x: x > 5, range(10))         # (6, 7, 8, 9)
-<obj>  = reduce(lambda out, x: out + x, range(10))  # 45
+<iter> = map(lambda x: x + 1, range(10))                  # (1, 2, ..., 10)
+<iter> = filter(lambda x: x > 5, range(10))               # (6, 7, 8, 9)
+<obj>  = reduce(lambda out, x: out + x, range(10))        # 45
 ```
+* **Reduce must be imported from functools module.**
 
 ### Any, All
 ```python
-<bool> = any(<collection>)                          # False if empty.
-<bool> = all(el[1] for el in <collection>)          # True if empty.
+<bool> = any(<collection>)                                # False if empty.
+<bool> = all(el[1] for el in <collection>)                # True if empty.
 ```
 
-### If - Else
+### Conditional Expression
 ```python
-<obj> = <expression_if_true> if <condition> else <expression_if_false>
+<obj> = <exp_if_true> if <condition> else <exp_if_false>
 ```
 
 ```python
@@ -809,7 +803,7 @@ direction = Direction.n
 
 ```python
 from dataclasses import make_dataclass
-Creature  = make_dataclass('Creature', ['location', 'direction'])
+Creature  = make_dataclass('Creature', ['loc', 'dir'])
 creature  = Creature(Point(0, 0), Direction.n)
 ```
 
@@ -1061,6 +1055,7 @@ class MyClassWithSlots:
 ### Copy
 ```python
 from copy import copy, deepcopy
+
 <object> = copy(<object>)
 <object> = deepcopy(<object>)
 ```
@@ -1146,7 +1141,7 @@ class Counter:
 ```
 
 #### Python has many different iterator objects:
-* **Iterators returned by the [iter()](#iterator) function, such as list\_iterator and set\_iterator.**
+* **Sequence iterators returned by the [iter()](#iterator) function, such as list\_iterator and set\_iterator.**
 * **Objects returned by the [itertools](#itertools) module, such as count, repeat and cycle.**
 * **Generators returned by the [generator functions](#generator) and [generator expressions](#comprehensions).**
 * **File objects returned by the [open()](#open) function, etc.**
@@ -1292,7 +1287,9 @@ Enum
 ----
 ```python
 from enum import Enum, auto
+```
 
+```python
 class <enum_name>(Enum):
     <member_name_1> = <value_1>
     <member_name_2> = <value_2_a>, <value_2_b>
@@ -1362,7 +1359,7 @@ else:
 finally:
     <code_3>
 ```
-* **Code inside the `'else'` block will only be executed if `'try'` block had no exception.**
+* **Code inside the `'else'` block will only be executed if `'try'` block had no exceptions.**
 * **Code inside the `'finally'` block will always be executed.**
 
 ### Catching Exceptions
@@ -1496,8 +1493,8 @@ Command Line Arguments
 ----------------------
 ```python
 import sys
-script_name = sys.argv[0]
-arguments   = sys.argv[1:]
+scripts_path = sys.argv[0]
+arguments    = sys.argv[1:]
 ```
 
 ### Argument Parser
@@ -1583,8 +1580,8 @@ def write_to_file(filename, text):
 ```
 
 
-Path
-----
+Paths
+-----
 ```python
 from os import getcwd, path, listdir
 from glob import glob
@@ -1676,6 +1673,7 @@ import os, shutil
 ```python
 os.chdir(<path>)                    # Changes the current working directory.
 os.mkdir(<path>, mode=0o777)        # Creates a directory. Mode is in octal.
+os.makedirs(<path>, mode=0o777)     # Creates all directories in the path.
 ```
 
 ```python
@@ -1782,7 +1780,7 @@ import csv
 <list>   = next(<reader>)           # Returns next row as a list of strings.
 <list>   = list(<reader>)           # Returns list of remaining rows.
 ```
-* **File must be opened with `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
+* **File must be opened with a `'newline=""'` argument, or newlines embedded inside quoted fields will not be interpreted correctly!**
 
 ### Write
 ```python
@@ -1790,7 +1788,7 @@ import csv
 <writer>.writerow(<collection>)     # Encodes objects using `str(<el>)`.
 <writer>.writerows(<coll_of_coll>)  # Appends multiple rows.
 ```
-* **File must be opened with `'newline=""'` argument, or '\r' will be added in front of every '\n' on platforms that use '\r\n' line endings!**
+* **File must be opened with a `'newline=""'` argument, or '\r' will be added in front of every '\n' on platforms that use '\r\n' line endings!**
 
 ### Parameters
 * **`'dialect'` - Master parameter that sets the default values.**
@@ -1856,13 +1854,14 @@ import sqlite3
 ### Write
 ```python
 <conn>.execute('<query>')                       # Can raise a subclass of sqlite3.Error.
-<conn>.commit()                                 # Commits all transactions since last commit.
+<conn>.commit()                                 # Saves all changes since the last commit.
+<conn>.rollback()                               # Discards all changes since the last commit.
 ```
 
 #### Or:
 ```python
-with <conn>:
-    <conn>.execute('<query>')
+with <conn>:                                    # Exits the block with commit() or rollback(),
+    <conn>.execute('<query>')                   # depending on whether an exception occurred.
 ```
 
 ### Placeholders
@@ -1879,10 +1878,10 @@ with <conn>:
 
 ```python
 >>> conn = sqlite3.connect('test.db')
->>> conn.execute('create table person (person_id integer primary key, name, height)')
->>> conn.execute('insert into person values (null, ?, ?)', ('Jean-Luc', 187)).lastrowid
+>>> conn.execute('CREATE TABLE person (person_id INTEGER PRIMARY KEY, name, height)')
+>>> conn.execute('INSERT INTO person VALUES (NULL, ?, ?)', ('Jean-Luc', 187)).lastrowid
 1
->>> conn.execute('select * from person').fetchall()
+>>> conn.execute('SELECT * FROM person').fetchall()
 [(1, 'Jean-Luc', 187)]
 ``` 
 
@@ -1904,10 +1903,10 @@ Bytes
 **Bytes object is an immutable sequence of single bytes. Mutable version is called bytearray.**
 
 ```python
-<bytes> = b'<str>'                       # Only accepts ASCII characters and \x00 - \xff.
+<bytes> = b'<str>'                       # Only accepts ASCII characters and \x00-\xff.
 <int>   = <bytes>[<index>]               # Returns int in range from 0 to 255.
 <bytes> = <bytes>[<slice>]               # Returns bytes even if it has only one element.
-<bytes> = <bytes>.join(<coll_of_bytes>)  # Joins elements using bytes object as separator.
+<bytes> = <bytes>.join(<coll_of_bytes>)  # Joins elements using bytes as a separator.
 ```
 
 ### Encode
@@ -1944,10 +1943,13 @@ def write_bytes(filename, bytes_obj):
 Struct
 ------
 * **Module that performs conversions between a sequence of numbers and a bytes object.**
-* **Machine’s native type sizes and byte order are used by default.**
+* **System’s type sizes and byte order are used by default.**
 
 ```python
 from struct import pack, unpack, iter_unpack
+```
+
+```python
 <bytes>  = pack('<format>', <num_1> [, <num_2>, ...])
 <tuple>  = unpack('<format>', <bytes>)
 <tuples> = iter_unpack('<format>', <bytes>)
@@ -1963,7 +1965,7 @@ b'\x00\x01\x00\x02\x00\x00\x00\x03'
 
 ### Format
 #### For standard type sizes start format string with:
-* **`'='` - native byte order (usually little-endian)**
+* **`'='` - system's byte order (usually little-endian)**
 * **`'<'` - little-endian**
 * **`'>'` - big-endian (also `'!'`)**
 
@@ -1990,6 +1992,7 @@ from array import array
 <array> = array('<typecode>', <bytes>)         # Array from bytes object.
 <array> = array('<typecode>', <array>)         # Treats array as a sequence of numbers.
 <bytes> = bytes(<array>)                       # Or: <array>.tobytes()
+<file>.write(<array>)                          # Writes array to the binary file.
 ```
 
 
@@ -1998,6 +2001,7 @@ Memory View
 * **A sequence object that points to the memory of another object.**
 * **Each element can reference a single or multiple consecutive bytes, depending on format.**
 * **Order and number of elements can be changed with slicing.**
+* **Casting only works between char and other types and uses system's sizes and byte order.**
 
 ```python
 <mview> = memoryview(<bytes/bytearray/array>)  # Immutable if bytes, else mutable.
@@ -2009,10 +2013,10 @@ Memory View
 
 ### Decode
 ```python
-<bin_file>.write(<mview>)                      # Writes mview to the binary file.
 <bytes> = bytes(<mview>)                       # Creates a new bytes object.
 <bytes> = <bytes>.join(<coll_of_mviews>)       # Joins mviews using bytes object as sep.
 <array> = array('<typecode>', <mview>)         # Treats mview as a sequence of numbers.
+<file>.write(<mview>)                          # Writes mview to the binary file.
 ```
 
 ```python
@@ -2046,52 +2050,51 @@ Threading
 * **That is why using multiple threads won't result in a faster execution, unless at least one of the threads contains an I/O operation.**
 ```python
 from threading import Thread, RLock, Semaphore, Event, Barrier
+from concurrent.futures import ThreadPoolExecutor
 ```
 
 ### Thread
 ```python
-<Thread> = Thread(target=<function>)  # Use `args=<collection>` to set arguments.
-<Thread>.start()                      # Starts the thread.
-<bool> = <Thread>.is_alive()          # Checks if thread has finished executing.
-<Thread>.join()                       # Waits for thread to finish.
+<Thread> = Thread(target=<function>)           # Use `args=<collection>` to set the arguments.
+<Thread>.start()                               # Starts the thread.
+<bool> = <Thread>.is_alive()                   # Checks if the thread has finished executing.
+<Thread>.join()                                # Waits for the thread to finish.
 ```
 * **Use `'kwargs=<dict>'` to pass keyword arguments to the function.**
 * **Use `'daemon=True'`, or the program will not be able to exit while the thread is alive.**
 
 ### Lock
 ```python
-<lock> = RLock()                      # Lock that can only be released by the owner.
-<lock>.acquire()                      # Waits for lock to be available.
-<lock>.release()                      # Makes lock available again.
+<lock> = RLock()                               # Lock that can only be released by the owner.
+<lock>.acquire()                               # Waits for the lock to be available.
+<lock>.release()                               # Makes the lock available again.
 ```
 
 #### Or:
 ```python
-lock = RLock()
-with lock:
-    ...
+with <lock>:                                   # Enters the block by calling acquire(),
+    ...                                        # and exits it with release().
 ```
 
 ### Semaphore, Event, Barrier
 ```python
-<Semaphore> = Semaphore(value=1)      # Lock that can be acquired by 'value' threads at once.
-<Event>     = Event()                 # Method wait() blocks until set() is called.
-<Barrier>   = Barrier(n_times)        # Method wait() blocks until it's called 'n_times'.
+<Semaphore> = Semaphore(value=1)               # Lock that can be acquired by 'value' threads.
+<Event>     = Event()                          # Method wait() blocks until set() is called.
+<Barrier>   = Barrier(n_times)                 # Wait() blocks until it's called n_times.
 ```
 
 ### Thread Pool Executor
+**Object that manages thread execution.**
 ```python
-from concurrent.futures import ThreadPoolExecutor
-with ThreadPoolExecutor(max_workers=None) as executor:         # Does not exit until done.
-    <iter>   = executor.map(lambda x: x + 1, range(3))         # (1, 2, 3)
-    <iter>   = executor.map(lambda x, y: x + y, 'abc', '123')  # ('a1', 'b2', 'c3')
-    <Future> = executor.submit(<function> [, <arg_1>, ...])    # Also visible outside block.
+<Exec> = ThreadPoolExecutor(max_workers=None)  # Or: `with ThreadPoolExecutor() as <name>: …`
+<Exec>.shutdown(wait=True)                     # Blocks until all threads finish executing.
 ```
 
-#### Future:
 ```python
-<bool> = <Future>.done()              # Checks if thread has finished executing.
-<obj>  = <Future>.result()            # Waits for thread to finish and returns result.
+<iter> = <Exec>.map(<func>, <args_1>, ...)     # A multithreaded and non-lazy map().
+<Futr> = <Exec>.submit(<func>, <arg_1>, ...)   # Starts a thread and returns its Future object.
+<bool> = <Futr>.done()                         # Checks if the thread has finished executing.
+<obj>  = <Futr>.result()                       # Waits for thread to finish and returns result.
 ```
 
 ### Queue
@@ -2102,10 +2105,10 @@ from queue import Queue
 ```
 
 ```python
-<Queue>.put(<el>)                     # Blocks until queue stops being full.
-<Queue>.put_nowait(<el>)              # Raises queue.Full exception if full.
-<el> = <Queue>.get()                  # Blocks until queue stops being empty.
-<el> = <Queue>.get_nowait()           # Raises queue.Empty exception if empty.
+<Queue>.put(<el>)                              # Blocks until queue stops being full.
+<Queue>.put_nowait(<el>)                       # Raises queue.Full exception if full.
+<el> = <Queue>.get()                           # Blocks until queue stops being empty.
+<el> = <Queue>.get_nowait()                    # Raises queue.Empty exception if empty.
 ```
 
 
@@ -2126,7 +2129,7 @@ sorted_by_second = sorted(<collection>, key=op.itemgetter(1))
 sorted_by_both   = sorted(<collection>, key=op.itemgetter(1, 0))
 product_of_elems = functools.reduce(op.mul, <collection>)
 union_of_sets    = functools.reduce(op.or_, <coll_of_sets>)
-LogicOp          = enum.Enum('LogicOp', {'AND': op.and_, 'OR' : op.or_})
+LogicOp          = enum.Enum('LogicOp', {'AND': op.and_, 'OR': op.or_})
 last_el          = op.methodcaller('pop')(<list>)
 ```
 
@@ -2145,8 +2148,8 @@ Introspection
 ### Attributes
 ```python
 <list> = dir(<object>)                     # Names of object's attributes (incl. methods).
-<dict> = vars(<object>)                    # Dict of object's fields. Also <obj>.__dict__.
-<bool> = hasattr(<object>, '<attr_name>')  # Checks if getattr() raises an error.
+<dict> = vars(<object>)                    # Dict of writable attributes. Also <obj>.__dict__.
+<bool> = hasattr(<object>, '<attr_name>')  # Checks if getattr() raises an AttributeError.
 value  = getattr(<object>, '<attr_name>')  # Raises AttributeError if attribute is missing.
 setattr(<object>, '<attr_name>', value)    # Only works on objects with __dict__ attribute.
 delattr(<object>, '<attr_name>')           # Equivalent to `del <object>.<attr_name>`.
@@ -2155,15 +2158,15 @@ delattr(<object>, '<attr_name>')           # Equivalent to `del <object>.<attr_n
 ### Parameters
 ```python
 from inspect import signature
-<sig>        = signature(<function>)
-no_of_params = len(<sig>.parameters)
-param_names  = list(<sig>.parameters.keys())
-param_kinds  = [a.kind for a in <sig>.parameters.values()]
+<Sig>  = signature(<function>)             # Function's Signature object.
+<dict> = <Sig>.parameters                  # Dict of function's Parameter objects.
+<str>  = <Param>.name                      # Parameter's name.
+<memb> = <Param>.kind                      # Member of ParameterKind enum.
 ```
 
 
-Metaprograming
---------------
+Metaprogramming
+---------------
 **Code that generates code.**
 
 ### Type
@@ -2292,7 +2295,8 @@ async def main_coroutine(screen):
 
 async def random_controller(id_, moves):
     while True:
-        moves.put_nowait((id_, random.choice(list(D))))
+        d = random.choice(list(D))
+        moves.put_nowait((id_, d))
         await asyncio.sleep(random.random() / 2)
 
 async def human_controller(screen, moves):
@@ -2345,8 +2349,7 @@ Plot
 ```python
 # $ pip3 install matplotlib
 import matplotlib.pyplot as plt
-plt.plot(<y_data> [, label=<str>])
-plt.plot(<x_data>, <y_data>)
+plt.plot(<x_data>, <y_data> [, label=<str>])   # Or: plt.plot(<y_data>)
 plt.legend()                                   # Adds a legend.
 plt.savefig(<path>)                            # Saves the figure.
 plt.show()                                     # Displays the figure.
@@ -2370,30 +2373,30 @@ with open('test.csv', encoding='utf-8', newline='') as file:
 
 Curses
 ------
-#### Clears the terminal, prints a message and waits for the ESC key press:
+#### Runs a basic file explorer in the terminal:
 ```python
-from curses import wrapper, curs_set, ascii
-from curses import KEY_UP, KEY_RIGHT, KEY_DOWN, KEY_LEFT
+from curses import wrapper, ascii, A_REVERSE, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_ENTER
+from os import listdir, path, chdir
 
-def main():
-    wrapper(draw)
-
-def draw(screen):
-    curs_set(0)                                # Makes cursor invisible.
-    screen.nodelay(True)                       # Makes getch() non-blocking.
-    screen.clear()
-    screen.addstr(0, 0, 'Press ESC to quit.')  # Coordinates are y, x.
-    while screen.getch() != ascii.ESC:
-        pass
-
-def get_border(screen):
-    from collections import namedtuple
-    P = namedtuple('P', 'x y')
-    height, width = screen.getmaxyx()
-    return P(width-1, height-1)
+def main(screen):
+    ch, first, selected, paths = 0, 0, 0, listdir()
+    while ch != ascii.ESC:
+        height, _ = screen.getmaxyx()
+        screen.clear()
+        for y, a_path in enumerate(paths[first : first+height]):
+            screen.addstr(y, 0, a_path, A_REVERSE * (selected == first + y))
+        ch = screen.getch()
+        selected += (ch == KEY_DOWN) - (ch == KEY_UP)
+        selected = max(0, min(len(paths)-1, selected))
+        first += (first <= selected - height) - (first > selected)
+        if ch in [KEY_LEFT, KEY_RIGHT, KEY_ENTER, 10, 13]:
+            new_dir = '..' if ch == KEY_LEFT else paths[selected]
+            if path.isdir(new_dir):
+                chdir(new_dir)
+                first, selected, paths = 0, 0, listdir()
 
 if __name__ == '__main__':
-    main()
+    wrapper(main)
 ```
 
 
@@ -2447,18 +2450,19 @@ Scraping
 ```python
 # $ pip3 install requests beautifulsoup4
 import requests, bs4, sys
-URL = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
+
+WIKI_URL = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
 try:
-    html  = requests.get(URL).text
-    doc   = bs4.BeautifulSoup(html, 'html.parser')
-    table = doc.find('table', class_='infobox vevent')
-    link  = table.find('th', text='Website').next_sibling.a['href']
-    ver   = table.find('th', text='Stable release').next_sibling.strings.__next__()
-    url_i = table.find('img')['src']
-    image = requests.get(f'https:{url_i}').content
+    html       = requests.get(WIKI_URL).text
+    document   = bs4.BeautifulSoup(html, 'html.parser')
+    table      = document.find('table', class_='infobox vevent')
+    python_url = table.find('th', text='Website').next_sibling.a['href']
+    version    = table.find('th', text='Stable release').next_sibling.strings.__next__()
+    logo_url   = table.find('img')['src']
+    logo       = requests.get(f'https:{logo_url}').content
     with open('test.png', 'wb') as file:
-        file.write(image)
-    print(link, ver)
+        file.write(logo)
+    print(python_url, version)
 except requests.exceptions.ConnectionError:
     print("You've got problems with connection.", file=sys.stderr)
 ```
@@ -2494,7 +2498,7 @@ def send_page(sport):
 
 ### REST Request
 ```python
-@post('/odds/<sport>')
+@post('/<sport>/odds')
 def odds_handler(sport):
     team = request.forms.get('team')
     home_odds, away_odds = 2.44, 3.29
@@ -2506,8 +2510,9 @@ def odds_handler(sport):
 #### Test:
 ```python
 # $ pip3 install requests
->>> import requests
->>> url = 'http://localhost:8080/odds/football'
+>>> import threading, requests
+>>> threading.Thread(target=run, daemon=True).start()
+>>> url = 'http://localhost:8080/football/odds'
 >>> data = {'team': 'arsenal f.c.'}
 >>> response = requests.post(url, data=data)
 >>> response.json()
@@ -2528,7 +2533,7 @@ duration = time() - start_time
 #### High performance:
 ```python
 from time import perf_counter
-start_time = perf_counter()             # Seconds since restart.
+start_time = perf_counter()             # Seconds since the restart.
 ...
 duration = perf_counter() - start_time
 ```
@@ -2536,7 +2541,7 @@ duration = perf_counter() - start_time
 ### Timing a Snippet
 ```python
 >>> from timeit import timeit
->>> timeit('"-".join(str(i) for i in range(100))',
+>>> timeit("''.join(str(i) for i in range(100))",
 ...        number=10000, globals=globals(), setup='pass')
 0.34986
 ```
@@ -2574,11 +2579,10 @@ Line #         Mem usage      Increment   Line Contents
 ### Call Graph
 #### Generates a PNG image of a call graph with highlighted bottlenecks:
 ```python
-# $ pip3 install pycallgraph
-from pycallgraph import output, PyCallGraph
+# $ pip3 install pycallgraph2
+from pycallgraph2 import output, PyCallGraph
 from datetime import datetime
-time_str = datetime.now().strftime('%Y%m%d%H%M%S')
-filename = f'profile-{time_str}.png'
+filename = f'profile-{datetime.now():%Y%m%d%H%M%S}.png'
 drawer = output.GraphvizOutput(output_file=filename)
 with PyCallGraph(drawer):
     <code_to_be_profiled>
@@ -2613,27 +2617,25 @@ indexes = <array>.argmin(axis)
 ```
 
 * **Shape is a tuple of dimension sizes.**
-* **Axis is the index of a dimension that gets collapsed. The leftmost dimension has index 0.**
+* **Axis is an index of the dimension that gets collapsed. Leftmost dimension has index 0.**
 
 ### Indexing
 ```bash
-<el>       = <2d_array>[0, 0]        # First element.
-<1d_view>  = <2d_array>[0]           # First row.
-<1d_view>  = <2d_array>[:, 0]        # First column. Also [..., 0].
-<3d_view>  = <2d_array>[None, :, :]  # Expanded by dimension of size 1.
+<el>       = <2d_array>[row_index, column_index]
+<1d_view>  = <2d_array>[row_index]
+<1d_view>  = <2d_array>[:, column_index]
 ```
 
 ```bash
-<1d_array> = <2d_array>[<1d_row_indexes>, <1d_column_indexes>]
-<2d_array> = <2d_array>[<2d_row_indexes>, <2d_column_indexes>]
+<1d_array> = <2d_array>[row_indexes, column_indexes]
+<2d_array> = <2d_array>[row_indexes]
+<2d_array> = <2d_array>[:, column_indexes]
 ```
 
 ```bash
-<2d_bools> = <2d_array> > 0
+<2d_bools> = <2d_array> ><== <el>
 <1d_array> = <2d_array>[<2d_bools>]
 ```
-
-* **If row and column indexes differ in shape, they are combined with broadcasting.**
 
 ### Broadcasting
 **Broadcasting is a set of rules by which NumPy functions operate on arrays of different sizes and/or dimensions.**
@@ -2743,13 +2745,13 @@ img.putdata([(add_noise(h), s, v) for h, s, v in img.getdata()])
 img.convert('RGB').save('test.png')
 ```
 
-### Drawing
+### Image Draw
 ```python
 from PIL import ImageDraw
+<ImageDraw> = ImageDraw.Draw(<Image>)
 ```
 
 ```python
-<ImageDraw> = ImageDraw.Draw(<Image>)
 <ImageDraw>.point((x, y), fill=None)
 <ImageDraw>.line((x1, y1, x2, y2 [, ...]), fill=None, width=0, joint=None) 
 <ImageDraw>.arc((x1, y1, x2, y2), from_deg, to_deg, fill=None, width=0)
@@ -2771,8 +2773,8 @@ from PIL import Image, ImageDraw
 import imageio
 WIDTH, R = 126, 10
 frames = []
-for velocity in range(15):
-    y = sum(range(velocity+1))
+for velocity in range(1, 16):
+    y = sum(range(velocity))
     frame = Image.new('L', (WIDTH, WIDTH))
     draw  = ImageDraw.Draw(frame)
     draw.ellipse((WIDTH/2-R, y, WIDTH/2+R, y+R*2), fill='white')
@@ -2833,7 +2835,7 @@ def read_wav_file(filename):
     with wave.open(filename, 'rb') as file:
         sampwidth = file.getsampwidth()
         frames = file.readframes(-1)
-    bytes_samples = (frames[i: i + sampwidth] for i in range(0, len(frames), sampwidth))
+    bytes_samples = (frames[i : i+sampwidth] for i in range(0, len(frames), sampwidth))
     return [get_int(b) / pow(2, sampwidth * 8 - 1) for b in bytes_samples]
 ```
 
@@ -2893,17 +2895,17 @@ Synthesizer
 #### Plays Popcorn by Gershon Kingsley:
 ```python
 # $ pip3 install simpleaudio
-import simpleaudio, math, struct
-from itertools import chain, repeat
+import math, struct, simpleaudio
+from itertools import repeat, chain
 F  = 44100
-P1 = '71♪,69,,71♪,66,,62♪,66,,59♪,,,'
-P2 = '71♪,73,,74♪,73,,74,,71,,73♪,71,,73,,69,,71♪,69,,71,,67,,71♪,,,'
+P1 = '71♩,69♪,,71♩,66♪,,62♩,66♪,,59♩,,,'
+P2 = '71♩,73♪,,74♩,73♪,,74♪,,71♪,,73♩,71♪,,73♪,,69♪,,71♩,69♪,,71♪,,67♪,,71♩,,,'
 get_pause   = lambda seconds: repeat(0, int(seconds * F))
 sin_f       = lambda i, hz: math.sin(i * 2 * math.pi * hz / F)
 get_wave    = lambda hz, seconds: (sin_f(i, hz) for i in range(int(seconds * F)))
 get_hz      = lambda key: 8.176 * 2 ** (int(key) / 12)
-parse_note  = lambda note: (get_hz(note[:2]), 0.25 if '♪' in note else 0.125)
-get_samples = lambda note: get_wave(*parse_note(note)) if note else get_pause(0.125)
+parse_note  = lambda note: (get_hz(note[:2]), 1/4 if '♩' in note else 1/8)
+get_samples = lambda note: get_wave(*parse_note(note)) if note else get_pause(1/8)
 samples_f   = chain.from_iterable(get_samples(n) for n in f'{P1}{P1}{P2}'.split(','))
 samples_b   = b''.join(struct.pack('<h', int(f * 30000)) for f in samples_f)
 simpleaudio.play_buffer(samples_b, 1, 2, F)
@@ -2920,7 +2922,7 @@ pg.init()
 screen = pg.display.set_mode((500, 500))
 rect = pg.Rect(240, 240, 20, 20)
 while all(event.type != pg.QUIT for event in pg.event.get()):
-    deltas = {pg.K_UP: (0, -3), pg.K_RIGHT: (3, 0), pg.K_DOWN: (0, 3), pg.K_LEFT: (-3, 0)}
+    deltas = {pg.K_UP: (0, -1), pg.K_RIGHT: (1, 0), pg.K_DOWN: (0, 1), pg.K_LEFT: (-1, 0)}
     for key_code, is_pressed in enumerate(pg.key.get_pressed()):
         rect = rect.move(deltas[key_code]) if key_code in deltas and is_pressed else rect
     screen.fill((0, 0, 0))
@@ -2960,17 +2962,17 @@ while all(event.type != pg.QUIT for event in pg.event.get()):
 ```
 
 ```python
-<Surf> = pg.transform.scale(<Surf>, (width, height))
-<Surf> = pg.transform.rotate(<Surf>, degrees)
-<Surf> = pg.transform.flip(<Surf>, x_bool, y_bool)
+from pygame.transform import scale, ...
+<Surf> = scale(<Surf>, (width, height))         # Returns scaled surface.
+<Surf> = rotate(<Surf>, degrees)                # Returns rotated and scaled surface.
+<Surf> = flip(<Surf>, x_bool, y_bool)           # Returns flipped surface.
 ```
 
 ```python
-pg.draw.line(<Surf>, color, (x1, y1), (x2, y2), width)
-pg.draw.arc(<Surf>, color, <Rect>, from_radians, to_radians)
-pg.draw.rect(<Surf>, color, <Rect>)
-pg.draw.polygon(<Surf>, color, points)
-pg.draw.ellipse(<Surf>, color, <Rect>)
+from pygame.draw import line, ...
+line(<Surf>, color, (x1, y1), (x2, y2), width)  # Draws a line to the surface.
+arc(<Surf>, color, <Rect>, from_rad, to_rad)    # Also: ellipse(<Surf>, color, <Rect>)
+rect(<Surf>, color, <Rect>)                     # Also: polygon(<Surf>, color, points)
 ```
 
 ### Font
@@ -3032,12 +3034,12 @@ def update_speed(mario, tiles, pressed):
     mario.spd = P(*[max(-limit, min(limit, s)) for limit, s in zip(MAX_SPEED, P(x, y))])
 
 def update_position(mario, tiles):
-    p = mario.rect.topleft
-    larger_speed = max(abs(s) for s in mario.spd)
-    for _ in range(larger_speed):
+    x, y = mario.rect.topleft
+    n_steps = max(abs(s) for s in mario.spd)
+    for _ in range(n_steps):
         mario.spd = stop_on_collision(mario.spd, get_boundaries(mario.rect, tiles))
-        p = P(*[a + s/larger_speed for a, s in zip(p, mario.spd)])
-        mario.rect.topleft = p
+        x, y = x + mario.spd.x/n_steps, y + mario.spd.y/n_steps
+        mario.rect.topleft = x, y
 
 def get_boundaries(rect, tiles):
     deltas = {D.n: P(0, -1), D.e: P(1, 0), D.s: P(0, 1), D.w: P(-1, 0)}
@@ -3174,7 +3176,7 @@ b  3  4
 ```
 
 ```python
-<DF>    = <DF> ><== <el/Sr/DF>                # Returns DataFrame of bools.
+<DF>    = <DF> ><== <el/Sr/DF>                # Returns DF of bools. Sr is treated as a row.
 <DF>    = <DF> +-*/ <el/Sr/DF>                # Items with non-matching keys get value NaN.
 ```
 
@@ -3379,39 +3381,37 @@ line(df, x='Date', y='Total Deaths per Million', color='Continent').show()
 ```python
 import pandas as pd
 import plotly.graph_objects as go
-import datetime
 
 def main():
     display_data(wrangle_data(*scrape_data()))
 
 def scrape_data():
-    def scrape_yahoo(id_):
-        BASE_URL = 'https://query1.finance.yahoo.com/v7/finance/download/'
-        now = int(datetime.datetime.now().timestamp())
-        url = f'{BASE_URL}{id_}?period1=1579651200&period2={now}&interval=1d&events=history'
-        return pd.read_csv(url, usecols=['Date', 'Close']).set_index('Date').Close
-    covid = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv',
-                        usecols=['location', 'date', 'total_cases'])
-    covid = covid[covid.location == 'World'].set_index('date').total_cases
-    dow, gold, bitcoin = [scrape_yahoo(id_) for id_ in ('^DJI', 'GC=F', 'BTC-USD')]
-    dow.name, gold.name, bitcoin.name = 'Dow Jones', 'Gold', 'Bitcoin'
-    return covid, dow, gold, bitcoin
+    def scrape_covid():
+        url = 'https://covid.ourworldindata.org/data/owid-covid-data.csv'
+        df = pd.read_csv(url, usecols=['location', 'date', 'total_cases'])
+        return df[df.location == 'World'].set_index('date').total_cases
+    def scrape_yahoo(slug):
+        url = f'https://query1.finance.yahoo.com/v7/finance/download/{slug}' + \
+              '?period1=1579651200&period2=1608850800&interval=1d&events=history'
+        df = pd.read_csv(url, usecols=['Date', 'Close'])
+        return df.set_index('Date').Close
+    return scrape_covid(), scrape_yahoo('BTC-USD'), scrape_yahoo('GC=F'), scrape_yahoo('^DJI')
 
-def wrangle_data(covid, dow, gold, bitcoin):
-    df = pd.concat([dow, gold, bitcoin], axis=1)
+def wrangle_data(covid, bitcoin, gold, dow):
+    df = pd.concat([bitcoin, gold, dow], axis=1)
     df = df.sort_index().interpolate()
     df = df.rolling(10, min_periods=1, center=True).mean()
-    df = df.loc['2020-02-23':].iloc[:-2]
+    df = df.loc['2020-02-23':'2020-11-25']
     df = (df / df.iloc[0]) * 100
     return pd.concat([covid, df], axis=1, join='inner')
 
 def display_data(df):
-    def get_trace(col_name):
-        return go.Scatter(x=df.index, y=df[col_name], name=col_name, yaxis='y2')
-    traces = [get_trace(col_name) for col_name in df.columns[1:]]
-    traces.append(go.Scatter(x=df.index, y=df.total_cases, name='Total Cases', yaxis='y1'))
+    df.columns = ['Total Cases', 'Bitcoin', 'Gold', 'Dow Jones']
     figure = go.Figure()
-    figure.add_traces(traces)
+    for col_name in df:
+        yaxis = 'y1' if col_name == 'Total Cases' else 'y2'
+        trace = go.Scatter(x=df.index, y=df[col_name], name=col_name, yaxis=yaxis)
+        figure.add_trace(trace)
     figure.update_layout(
         yaxis1=dict(title='Total Cases', rangemode='tozero'),
         yaxis2=dict(title='%', rangemode='tozero', overlaying='y', side='right'),
@@ -3489,7 +3489,7 @@ from sys import argv, exit
 from collections import defaultdict, namedtuple
 from dataclasses import make_dataclass
 from enum import Enum
-import functools, itertools, operator as op, re
+import functools as ft, itertools as it, operator as op, re
 
 
 def main():
@@ -3512,6 +3512,6 @@ if __name__ == '__main__':
 
 Index
 -----
-* **Only available in [PDF](https://transactions.sendowl.com/products/78175486/4422834F/view).**
+* **Only available in the [PDF](https://transactions.sendowl.com/products/78175486/4422834F/view).**
 * **Ctrl+F / ⌘F is usually sufficient.**
 * **Searching `'#<title>'` on a [webpage](https://gto76.github.io/python-cheatsheet/) will limit the search to the titles.**
